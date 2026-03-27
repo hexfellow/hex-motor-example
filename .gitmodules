@@ -1,0 +1,3 @@
+[submodule "cpp/canopennode"]
+	path = cpp/canopennode
+	url = https://github.com/canopennode/canopennode
