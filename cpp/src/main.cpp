@@ -89,6 +89,10 @@ int main(int argc, char* argv[]) {
             //   t2.kp = 5.0f;  t2.kd = 0.5f;
             // -----------------------------------------------------------
 
+            t1.velocity = 1.0f;
+            t1.kd = 1.0f;
+            t2.velocity = 2.0f;
+            t2.kd = 1.0f;
             uint8_t pdo_data[16];
             t1.encode(motor1.mapping(), pdo_data);
             t2.encode(motor2.mapping(), pdo_data + 8);

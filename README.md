@@ -20,6 +20,7 @@ As stated in docs, the SDOs we need to configure are:
 - Limit maximum torque by writing Permille number (80% in this case) `800u16` to 0x6072[0] (Optional, Saveable)
 - Write each motor's PDO. Things to write will be different for each motor. (Saveable)
 - Write `(0x10u32 << 16) | 250u32` to 0x1016[1] to enable HEARTBEAT Monitoring. (Saveable)
+![canopen config](canopen_cfg.jpg)
 - Select MIT mode by writing `5u8` to 0x6060[0].
 - Enable compressed MIT by writing `1u8` to 0x2004[1].
 - Write initial MIT control values to 0x2004[2] and 0x2004[3].
