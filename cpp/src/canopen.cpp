@@ -71,7 +71,11 @@ bool CANSocket::send_canfd(uint32_t can_id, const void* data, uint8_t len, bool 
     struct canfd_frame frame{};
     frame.can_id = can_id;
     frame.len = len;
+#ifdef CANFD_FDF
     frame.flags = CANFD_FDF | (brs ? CANFD_BRS : 0);
+#else
+    frame.flags = brs ? CANFD_BRS : 0;
+#endif
     if (data && len > 0) std::memcpy(frame.data, data, len);
     return ::write(fd_, &frame, sizeof(frame)) == static_cast<ssize_t>(sizeof(frame));
 }
