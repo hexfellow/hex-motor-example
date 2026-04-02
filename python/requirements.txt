@@ -1,0 +1,6 @@
+# HEX motor Python example — install with:
+#   pip install -r requirements.txt
+#
+# Requires Linux socketcan (e.g. can0) with CAN FD support for MIT RPDO.
+
+python-can>=4.4.0
